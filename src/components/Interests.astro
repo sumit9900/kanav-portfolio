@@ -1,0 +1,145 @@
+---
+---
+<section id="interests" class="interests-section">
+  <div class="container">
+    <p class="section-label">What Makes Me, Me</p>
+    <h2 class="section-heading">Interests & Passions</h2>
+
+    <div class="interests-grid">
+
+      <!-- Marvel -->
+      <div class="interest-feature card">
+        <div class="interest-icon-wrap" style="background: rgba(192,18,44,0.12); border: 1px solid rgba(192,18,44,0.3);">
+          <span class="interest-big-icon">⚡</span>
+        </div>
+        <div class="interest-content">
+          <h3 class="interest-title">Marvel Universe</h3>
+          <p class="interest-text">
+            From Iron Man to the Multiverse Saga — I have watched every film, read the source
+            comics, tracked every Easter egg, and can hold an hour-long conversation on why
+            Tony Stark is the GOAT. Marvel isn't just entertainment; it's a masterclass in
+            storytelling, sacrifice, and what it means to be a hero.
+          </p>
+          <div class="interest-tags">
+            <span class="itag">Iron Man</span>
+            <span class="itag">Avengers</span>
+            <span class="itag">MCU Lore</span>
+            <span class="itag">Comics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gaming -->
+      <div class="interest-feature card">
+        <div class="interest-icon-wrap" style="background: rgba(232,184,75,0.1); border: 1px solid rgba(232,184,75,0.25);">
+          <span class="interest-big-icon">🎮</span>
+        </div>
+        <div class="interest-content">
+          <h3 class="interest-title">Gaming</h3>
+          <p class="interest-text">
+            Strategy, action, adventure — I play them all and I play them seriously. Gaming
+            has taught me more about decision-making under pressure, pattern recognition, and
+            creative problem-solving than any classroom. Also, my reaction time is genuinely
+            superhuman at this point.
+          </p>
+          <div class="interest-tags">
+            <span class="itag">Strategy</span>
+            <span class="itag">Action RPG</span>
+            <span class="itag">Competitive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Small interest cards -->
+      <div class="interest-small card">
+        <span class="interest-emoji">📖</span>
+        <h4 class="interest-small-title">Reading</h4>
+        <p class="interest-small-text">History, science, and anything that changes the way I see the world. Currently reading biographies of great leaders.</p>
+      </div>
+
+      <div class="interest-small card">
+        <span class="interest-emoji">🧠</span>
+        <h4 class="interest-small-title">Debate & Rhetoric</h4>
+        <p class="interest-small-text">The art of constructing an argument, anticipating the counter, and making your case heard. A lifelong pursuit.</p>
+      </div>
+
+      <div class="interest-small card">
+        <span class="interest-emoji">🔭</span>
+        <h4 class="interest-small-title">Science & Space</h4>
+        <p class="interest-small-text">Physics, astronomy, the question of what lies beyond. The universe is the greatest story ever told.</p>
+      </div>
+
+      <div class="interest-small card">
+        <span class="interest-emoji">🎵</span>
+        <h4 class="interest-small-title">Music</h4>
+        <p class="interest-small-text">Epic soundtracks, film scores, and the occasional banger. Hans Zimmer composed the soundtrack to my life.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.interests-section { position: relative; z-index: 1; }
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.interest-feature {
+  grid-column: span 1;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.interest-icon-wrap {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+}
+.interest-big-icon { font-size: 1.6rem; }
+.interest-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.interest-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.interest-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.itag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(232,184,75,0.08);
+  border: 1px solid rgba(232,184,75,0.2);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+
+.interest-small { display: flex; flex-direction: column; gap: 0.4rem; }
+.interest-emoji { font-size: 1.5rem; }
+.interest-small-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.interest-small-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .interests-grid { grid-template-columns: 1fr; }
+  .interest-feature { flex-direction: column; }
+}
+</style>

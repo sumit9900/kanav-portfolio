@@ -1,0 +1,144 @@
+---
+const posts = [
+  {
+    date: 'November 2024',
+    tag: 'Reflection',
+    title: 'What being School Captain actually means',
+    excerpt: 'I thought it was about the badge. It is not about the badge. Being School Captain has taught me more about listening than speaking — which, if you know me, is saying something.',
+    readTime: '4 min read',
+  },
+  {
+    date: 'September 2024',
+    tag: 'Debate',
+    title: 'How I won the inter-school debate (and what I almost got wrong)',
+    excerpt: 'The moment you think you have won a debate is the moment you are most vulnerable. A reflection on preparation, anticipation, and staying calm when the other side makes a surprisingly good point.',
+    readTime: '6 min read',
+  },
+  {
+    date: 'July 2024',
+    tag: 'Marvel',
+    title: 'Why Tony Stark is the greatest character in cinematic history',
+    excerpt: 'An argument I have been building since I was eight. This is the definitive version. I will accept counterarguments in the comments, but I will rebut them.',
+    readTime: '8 min read',
+  },
+  {
+    date: 'May 2024',
+    tag: 'Learning',
+    title: 'Five study techniques that actually work (tested by me)',
+    excerpt: 'I have tried everything from pomodoro to flashcards to ambient soundtracks. Here is what genuinely moved the needle, and what is just internet advice dressed up as science.',
+    readTime: '5 min read',
+  },
+];
+---
+<section id="journal" class="journal-section">
+  <div class="container">
+    <p class="section-label">Thoughts &amp; Reflections</p>
+    <h2 class="section-heading">The Journal</h2>
+    <p class="section-sub">Ideas I'm thinking about. Lessons I'm learning. Arguments I'm building.</p>
+
+    <div class="posts-grid">
+      {posts.map((post, i) => (
+        <article class="post-card card">
+          <div class="post-meta">
+            <span class="post-tag">{post.tag}</span>
+            <span class="post-date text-muted">{post.date}</span>
+          </div>
+          <h3 class="post-title">{post.title}</h3>
+          <p class="post-excerpt">{post.excerpt}</p>
+          <div class="post-footer">
+            <span class="post-read text-muted">{post.readTime}</span>
+            <button class="post-btn" aria-label={`Read: ${post.title}`}>
+              Read entry →
+            </button>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="journal-coming-soon">
+      <div class="coming-soon-inner">
+        <span class="coming-soon-icon">✍️</span>
+        <p>More entries coming soon — Kanav is still writing them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.journal-section { position: relative; z-index: 1; }
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.post-card { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  background: rgba(192,18,44,0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+.post-date { font-size: 0.8rem; }
+
+.post-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+.post-excerpt {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+.post-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.post-read { font-size: 0.78rem; font-family: var(--font-mono); }
+.post-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+.post-btn:hover { opacity: 0.7; }
+
+.journal-coming-soon {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-dim);
+}
+.coming-soon-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+</style>

@@ -1,0 +1,159 @@
+---
+---
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-text">
+        <p class="section-label">About Me</p>
+        <h2 class="about-heading">More than a student.<br/><span class="text-gold">A force in the making.</span></h2>
+
+        <p class="about-para">
+          I'm Kanav — 13 years old, currently serving as School Captain, and absolutely certain
+          that the best version of any story involves someone who refuses to give up. Whether
+          it's winning a debate, acing an exam, or finally beating that last boss level, I bring
+          the same intensity to everything I do.
+        </p>
+        <p class="about-para">
+          My friends know me as the kid who has a Marvel reference for every situation (they're
+          not wrong). My teachers know me as someone who asks too many questions (they're also
+          not wrong). I believe curiosity is a superpower — and I plan to use mine.
+        </p>
+        <p class="about-para">
+          This website is my story — updated as I grow. Come back in a few years and watch
+          how far this goes.
+        </p>
+
+        <div class="about-details">
+          <div class="detail-item">
+            <span class="detail-label">Currently</span>
+            <span class="detail-value">Grade 8 · School Captain</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">India 🇮🇳</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Motto</span>
+            <span class="detail-value">"Part of the journey is the end."</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-skills">
+        <p class="section-label">Core Skills</p>
+        <div class="skill-bars">
+          {[
+            { label: 'Public Speaking & Debate', pct: 92 },
+            { label: 'Academic Excellence',      pct: 95 },
+            { label: 'Leadership',               pct: 88 },
+            { label: 'Problem Solving',          pct: 85 },
+            { label: 'Gaming Reflexes',          pct: 97 },
+            { label: 'Marvel Trivia',            pct: 99 },
+          ].map(s => (
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span class="skill-name">{s.label}</span>
+                <span class="skill-pct text-gold">{s.pct}%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-fill" style={`width:${s.pct}%`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.about-section { position: relative; z-index: 1; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.about-para {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-details {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.detail-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.detail-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  min-width: 90px;
+}
+.detail-value {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Skill bars */
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.skill-item {}
+.skill-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.skill-name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.skill-pct {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.skill-track {
+  height: 3px;
+  background: var(--surface-alt);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--crimson), var(--gold));
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+</style>

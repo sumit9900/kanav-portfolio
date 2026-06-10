@@ -1,0 +1,49 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="divider-angled" aria-hidden="true"></div>
+  <div class="container footer-inner">
+    <p class="footer-name display">KS</p>
+    <p class="footer-copy">
+      &copy; {year} Kanav Singhal. Built with <span class="text-gold">♥</span> and a little bit of arc reactor energy.
+    </p>
+    <p class="footer-stack text-muted">
+      Built with <a href="https://astro.build" target="_blank" rel="noopener" class="footer-link">Astro</a> ·
+      Hosted on <a href="https://pages.cloudflare.com" target="_blank" rel="noopener" class="footer-link">Cloudflare Pages</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 0;
+  background: var(--panel);
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+.footer-name {
+  font-size: 2.5rem;
+  color: var(--crimson);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.footer-stack { font-size: 0.8rem; }
+.footer-link {
+  color: var(--gold);
+  transition: opacity 0.2s;
+}
+.footer-link:hover { opacity: 0.7; }
+</style>

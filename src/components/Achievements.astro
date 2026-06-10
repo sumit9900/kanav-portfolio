@@ -1,0 +1,156 @@
+---
+const achievements = [
+  {
+    icon: '🏛️',
+    year: '2024',
+    title: 'School Captain',
+    org: 'My School',
+    desc: 'Elected by peers and faculty to lead the student body. Responsible for representing students, organising events, and setting the tone for the year. One of the greatest honours so far.',
+    tag: 'Leadership',
+  },
+  {
+    icon: '🎤',
+    year: '2024',
+    title: 'Debate Champion',
+    org: 'Inter-school Debate Competition',
+    desc: 'First place in the annual inter-school debate. Topic: "Technology does more harm than good." I was on the opposition. I won, obviously. Words are my weapons.',
+    tag: 'Debate',
+  },
+  {
+    icon: '📚',
+    year: '2023',
+    title: 'Academic Distinction',
+    org: 'Annual School Results',
+    desc: 'Ranked top of class across core subjects including Mathematics, Science, and English. High achievement is not luck — it is consistency, curiosity, and a refusal to stop at "good enough".',
+    tag: 'Academic',
+  },
+  {
+    icon: '🗣️',
+    year: '2023',
+    title: 'Best Speaker Award',
+    org: 'School MUN Conference',
+    desc: 'Awarded Best Delegate at the school Model United Nations for representing the committee with clarity, research, and confidence. Diplomacy is just debate with better suits.',
+    tag: 'Leadership',
+  },
+  {
+    icon: '🏆',
+    year: '2023',
+    title: 'Quiz Bowl Winner',
+    org: 'Regional Quiz Competition',
+    desc: 'Won the regional general knowledge quiz bowl representing the school. Science, history, pop culture, Marvel — bring any category.',
+    tag: 'Academic',
+  },
+  {
+    icon: '🌟',
+    year: '2022',
+    title: 'Student of the Year',
+    org: 'School Annual Day',
+    desc: 'Recognised for outstanding all-round performance in academics, sports, and co-curricular activities. The beginning of many more to come.',
+    tag: 'All-Rounder',
+  },
+];
+
+const tagColors: Record<string, string> = {
+  Leadership: '#C0122C',
+  Debate:     '#8B0A1E',
+  Academic:   '#B8860B',
+  'All-Rounder': '#5a5a7a',
+};
+---
+<section id="achievements" class="achievements-section">
+  <div class="container">
+    <p class="section-label">Track Record</p>
+    <h2 class="section-heading">Achievements</h2>
+    <p class="section-sub">A running log of wins, badges, and moments worth remembering.<br/>
+      <span class="text-muted" style="font-size:0.85rem;">( Kanav will keep adding to this as he grows. )</span>
+    </p>
+
+    <div class="achievements-grid">
+      {achievements.map((a, i) => (
+        <div class="achievement-card card" style={`animation-delay:${i * 0.06}s`}>
+          <div class="achievement-top">
+            <span class="achievement-icon">{a.icon}</span>
+            <span class="achievement-tag" style={`background:${tagColors[a.tag] ?? '#333'}22; color:${tagColors[a.tag] ?? '#aaa'};`}>{a.tag}</span>
+          </div>
+          <div class="achievement-year text-gold">{a.year}</div>
+          <h3 class="achievement-title">{a.title}</h3>
+          <p class="achievement-org text-muted">{a.org}</p>
+          <p class="achievement-desc">{a.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.achievements-section { position: relative; z-index: 1; }
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.section-sub {
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.achievement-card {
+  position: relative;
+  overflow: hidden;
+}
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, var(--crimson), var(--gold));
+  opacity: 0.7;
+}
+
+.achievement-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.achievement-icon { font-size: 1.5rem; }
+.achievement-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+.achievement-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+}
+.achievement-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: var(--text-primary);
+}
+.achievement-org {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+.achievement-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+</style>
